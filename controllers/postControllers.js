@@ -17,6 +17,16 @@ function show(req,res){
     const id= parseInt(req.params.id)
     // con find troviamo il post tramite id
     const post= defaultArray.find(post=> post.id ===id);
+    //facciamo il controllo
+    if(post===undefined){
+        //importo lo status 404
+        res.status(404)
+
+        return res.json({
+            error: "Not Found",
+            message: "Post non trovato"
+        })
+    }
     // lo restituiamo sotto forma di json
     res.json(post)
 }
@@ -36,6 +46,15 @@ function modify(req,res){
 function destroy(req,res){
     const id= parseInt(req.params.id)
     const post=defaultArray.find(post=>post.id===id);
+    if(post===undefined){
+        //importo lo status 404
+        res.status(404)
+        
+        return res.json({
+            error: "Not Found",
+            message: "Post non trovato"
+        })
+    }
 
     //rimuoviamo il post dall'array, in questo caso uno
     defaultArray.splice(defaultArray.indexOf(post), 1)
