@@ -1,4 +1,5 @@
 const defaultArray= require('../data/arraydipost');
+defaultArray
 
 //funzione per index
 function index(req,res){
@@ -24,3 +25,6 @@ function modify(req,res){
 function destroy(req,res){
     res.send(`Eliminazione del post: ${req.params.id}`)
 }
+
+//esporto tutto
+module.exports = {index,show,store,update,modify,destroy}
