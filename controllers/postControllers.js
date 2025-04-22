@@ -1,5 +1,5 @@
 const defaultArray= require('../data/arraydipost');
-defaultArray
+defaultArray;
 
 //funzione per index
 function index(req,res){
