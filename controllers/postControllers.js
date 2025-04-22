@@ -7,7 +7,12 @@ function index(req,res){
 }
 //funzione per show
 function show(req,res){
-    res.send(`Visualizzazione singolo post: ${req.params.id}`)
+    //recuperiamo l'id e lo trasformiamo in numero
+    const id= parseInt(req.params.id)
+    // con find troviamo il post tramite id
+    const post= defaultArray.find(post=> post.id ===id);
+    // lo restituiamo sotto forma di json
+    res.json(post)
 }
 //funzione per store
 function store(req,res){
