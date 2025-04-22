@@ -1,8 +1,15 @@
 const defaultArray= require('../data/arraydipost');
 //funzione per index
 function index(req,res){
-    console.log("Contenuto array:", defaultArray);
-    res.json(defaultArray);    
+    //all'inizio il post filtrato sarà uguale a quello originale
+    let filteredPosts=defaultArray;
+    //SE la richiesta contiene un filtro, filtriamo il post
+    if(req.query.tags){
+        filteredPosts=defaultArray.filter(post=>post.tags.includes(req.query.tags))
+    }
+    //restituisco la variabile che può risultare filtrata o contenere l'array originale
+    res.json(filteredPosts)
+    // res.json(defaultArray);    
 }
 //funzione per show
 function show(req,res){
@@ -29,10 +36,11 @@ function modify(req,res){
 function destroy(req,res){
     const id= parseInt(req.params.id)
     const post=defaultArray.find(post=>post.id===id);
-    
+
     //rimuoviamo il post dall'array, in questo caso uno
     defaultArray.splice(defaultArray.indexOf(post), 1)
 
+    res.sendStatus(204);
 }
 
 
