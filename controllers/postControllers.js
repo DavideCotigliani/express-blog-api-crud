@@ -1,9 +1,9 @@
 const defaultArray= require('../data/arraydipost');
-defaultArray;
+
 
 //funzione per index
 function index(req,res){
-    res.send('Lista dei post')
+    res.json(defaultArray);
 }
 //funzione per show
 function show(req,res){
