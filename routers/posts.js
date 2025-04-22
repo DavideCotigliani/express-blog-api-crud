@@ -22,7 +22,6 @@ router.put('/:id', postController.update);
 
 //rotta per operazione modify
 router.patch('/:id', postController.modify);
-
 //rotta per operazione destroy
 router.delete('/:id', postController.destroy);
 

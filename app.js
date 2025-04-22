@@ -5,14 +5,15 @@ const port= 4000;
 app.use(express.static('public'));
 
 app.get("/",(req,res)=>{
-    res.send('ciao per i post');
+    res.send('Prima rotta')
 })
 
 //importo il router
-const portRouter = require('./routers/posts');
+const postRouter = require('./routers/posts');
 
 // funzione use indico a express che ci sono nuove rotte specificando prefisso e router
-app.use("/posts", portRouter)
+app.use('/posts', postRouter)
+
 
 app.listen(port,()=>{
     console.log(`app in ascolto alla porta ${port}`);

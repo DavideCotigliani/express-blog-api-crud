@@ -1,9 +1,8 @@
 const defaultArray= require('../data/arraydipost');
-
-
 //funzione per index
 function index(req,res){
-    res.json(defaultArray);
+    console.log("Contenuto array:", defaultArray);
+    res.json(defaultArray);    
 }
 //funzione per show
 function show(req,res){
@@ -28,8 +27,14 @@ function modify(req,res){
 }
 //funzione per destroy 
 function destroy(req,res){
-    res.send(`Eliminazione del post: ${req.params.id}`)
+    const id= parseInt(req.params.id)
+    const post=defaultArray.find(post=>post.id===id);
+    
+    //rimuoviamo il post dall'array, in questo caso uno
+    defaultArray.splice(defaultArray.indexOf(post), 1)
+
 }
+
 
 //esporto tutto
 module.exports = {index,show,store,update,modify,destroy}
