@@ -3,6 +3,8 @@ const app= express();
 const port= 4000;
 //asset statici
 app.use(express.static('public'));
+//registro il body-parser per application-json
+app.use(express.json());
 
 app.get("/",(req,res)=>{
     res.send('Prima rotta')
