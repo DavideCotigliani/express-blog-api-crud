@@ -72,7 +72,7 @@ function update(req,res){
     post.image=req.body.image
     post.tags=req.body.tags
     //controlliamo
-    console.log(defaultArray);
+    // console.log(defaultArray);
     //restituiamo il post aggiornato
     res.json(post)
 }
