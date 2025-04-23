@@ -73,7 +73,8 @@ function update(req,res){
     post.tags=req.body.tags
     //controlliamo
     console.log(defaultArray);
-    
+    //restituiamo il post aggiornato
+    res.json(post)
 }
 //funzione per modify
 function modify(req,res){
