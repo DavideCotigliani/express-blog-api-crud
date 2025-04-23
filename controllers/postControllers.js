@@ -32,6 +32,7 @@ function show(req,res){
 }
 //funzione per store
 function store(req,res){
+    console.log(req.body);
     res.send('Creazione nuovo post')
 }
 //funzione per update
@@ -49,7 +50,7 @@ function destroy(req,res){
     if(post===undefined){
         //importo lo status 404
         res.status(404)
-        
+        //cosa restituisce in caso di 404
         return res.json({
             error: "Not Found",
             message: "Post non trovato"
