@@ -45,14 +45,35 @@ function store(req,res){
     //aggiungiamo il post alla lista degli altri post
     defaultArray.push(newPost)
     //controllo
-    console.log(defaultArray);
+    // console.log(defaultArray);
     //restituiamo lo status 201 e il post appena creato
     res.status(201);
     res.json(newPost)
 }
 //funzione per update
 function update(req,res){
-    res.send(`Modifica integrale del post: ${req.params.id}`)
+    //recuperiamo l'id e lo trasformiamo in numero
+    const id= parseInt(req.params.id)
+    // con find troviamo il post tramite id
+    const post= defaultArray.find(post=> post.id ===id);
+    //facciamo il controllo
+    if(post===undefined){
+        //importo lo status 404
+        res.status(404)
+
+        return res.json({
+            error: "Not Found",
+            message: "Post non trovato"
+        })
+    }
+    //aggiorniamo il post
+    post.title=req.body.title
+    post.content=req.body.content
+    post.image=req.body.image
+    post.tags=req.body.tags
+    //controlliamo
+    console.log(defaultArray);
+    
 }
 //funzione per modify
 function modify(req,res){
