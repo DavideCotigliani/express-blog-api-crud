@@ -46,7 +46,9 @@ function store(req,res){
     defaultArray.push(newPost)
     //controllo
     console.log(defaultArray);
-    
+    //restituiamo lo status 201 e il post appena creato
+    res.status(201);
+    res.json(newPost)
 }
 //funzione per update
 function update(req,res){
