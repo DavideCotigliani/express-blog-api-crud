@@ -15,6 +15,7 @@ Poi, all’interno della rotta Store, stampiamo nel terminale i dati in arrivo, 
 Milestone 3
 Implementiamo quindi la logica per aggiungere un nuovo post al nostro blog, e prepariamo la risposta adeguata.
 Testiamolo con postman.
+
 Milestone 4
 Ripetiamo il procedimento per la rotta di Update, in modo da avere la possibilità di modificare le nostre risorse.
 Numero minimo di push: 6
