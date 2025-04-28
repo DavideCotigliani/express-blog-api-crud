@@ -2,6 +2,7 @@ const express = require("express");
 const app= express();
 const port= 4000;
 const errorsHandler= require("./middlewares/errorhandler")
+const notFound = require("./middlewares/notfound")
 //asset statici
 app.use(express.static('public'));
 
@@ -20,7 +21,8 @@ app.use('/posts', postRouter)
 
 //registro il middleware per gli errori
 app.use(errorsHandler)
-
+//registro il middleware per rotta non trovata
+app.use(notFound)
 
 app.listen(port,()=>{
     console.log(`app in ascolto alla porta ${port}`);
