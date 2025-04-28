@@ -17,6 +17,7 @@ function index(req,res){
     const id= parseInt(req.params.id)
     // con find troviamo il post tramite id
     const post= defaultArray.find(post=> post.id ===id);
+    myfunzione()
     //facciamo il controllo
     if(post===undefined){
         //importo lo status 404

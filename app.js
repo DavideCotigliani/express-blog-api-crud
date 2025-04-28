@@ -1,6 +1,7 @@
 const express = require("express");
 const app= express();
 const port= 4000;
+const errorsHandler= require("./middlewares/errorhandler")
 //asset statici
 app.use(express.static('public'));
 
@@ -16,6 +17,9 @@ const postRouter = require('./routers/posts');
 
 // funzione use indico a express che ci sono nuove rotte specificando prefisso e router
 app.use('/posts', postRouter)
+
+//registro il middleware per gli errori
+app.use(errorsHandler)
 
 
 app.listen(port,()=>{
