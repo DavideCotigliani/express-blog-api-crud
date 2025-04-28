@@ -11,8 +11,8 @@ function index(req,res){
     res.json(filteredPosts)
     // res.json(defaultArray);    
 }
-//funzione per show
-function show(req,res){
+    //funzione per show
+    function show(req,res){
     //recuperiamo l'id e lo trasformiamo in numero
     const id= parseInt(req.params.id)
     // con find troviamo il post tramite id
@@ -46,6 +46,7 @@ function store(req,res){
     defaultArray.push(newPost)
     //controllo
     // console.log(defaultArray);
+    
     //restituiamo lo status 201 e il post appena creato
     res.status(201);
     res.json(newPost)
